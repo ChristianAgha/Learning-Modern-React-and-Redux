@@ -7,7 +7,9 @@ class App extends React.Component {
         super(props);
         // This is the ONLY time we do a direct assignment to this.state!!!
         this.state = { lat: null, errorMessage: "" };
+    }
 
+    componentDidMount() {
         window.navigator.geolocation.getCurrentPosition(
             (position) => {
                 // to update state, CALL setState!!! We DO NOT write: this.state.lat = position.coords.latitude
