@@ -11,10 +11,13 @@ class App extends React.Component {
     //     this.state = { lat: null, errorMessage: "" };
     // }
 
+    // Initializing the state (babel created a constructor out of this)
     state = {lat: null, errorMessage: ''}
 
     componentDidMount() {
         window.navigator.geolocation.getCurrentPosition(
+            // Calling setState is additive, as in specifying what lat is does not mess with 
+            // the value or errorMessage and vice versa
             (position) => this.setState({ lat: position.coords.latitude }),
             (err) => this.setState({ errorMessage: err.message })
         );
