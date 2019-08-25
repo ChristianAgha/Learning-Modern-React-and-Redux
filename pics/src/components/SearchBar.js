@@ -7,9 +7,12 @@ class SearchBar extends React.Component {
     }
 
     onFormSubmit = (event) => {
-        // By default if you press return while in the search bar the form tried to submit.. this prevents it
+        // By default if you press return while in the search bar the
+        // form tried to submit.. this prevents it
         event.preventDefault();
-        console.log(this.state.term)
+        // this.props.onSubmit <<< the way to access the onSearchSubmit
+        // function being passed on from the App component
+        this.props.onSubmit(this.state.term);
     }
 
     render () {
