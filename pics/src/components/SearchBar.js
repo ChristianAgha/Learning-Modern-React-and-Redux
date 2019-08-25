@@ -6,10 +6,16 @@ class SearchBar extends React.Component {
         term: ""
     }
 
+    onFormSubmit = (event) => {
+        // By default if you press return while in the search bar the form tried to submit.. this prevents it
+        event.preventDefault();
+        console.log(this.state.term)
+    }
+
     render () {
         return (
             <div className="ui segment">
-                <form className="ui form">
+                <form onSubmit={this.onFormSubmit} className="ui form">
                     <div className="field">
                         <label>Image Search</label>
                         <input 
