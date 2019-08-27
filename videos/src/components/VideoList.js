@@ -5,12 +5,12 @@ import VideoItem from './VideoItem';
 const VideoList = ({ videos }) => {
 
     const renderedList = videos.map((video) => {
-        return <VideoItem />;
+        return <VideoItem video={video}/>;
     });
 
     // props.videos is the array of videos that we recive that we want to render to the screen
     return (
-        <div>{renderedList}</div>
+        <div className="ui relaxed divided list">{renderedList}</div>
     );
 
 };
