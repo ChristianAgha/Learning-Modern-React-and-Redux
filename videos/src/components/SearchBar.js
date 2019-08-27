@@ -11,10 +11,8 @@ class SearchBar extends React.Component {
     onFormSubmit = (event) => {
         // Stops the form from submitting whenever return is pressed
         event.preventDefault();
-
-        
-
-        // TODO: Make SUre we call callback from parent component
+        //Call back function that sends the search term to the App component's onSearchTermSubmit func
+        this.props.onSearchTermSubmit(this.state.term);
     };
 
     render() {
