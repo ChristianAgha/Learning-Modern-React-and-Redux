@@ -5,7 +5,11 @@ import VideoItem from './VideoItem';
 const VideoList = ({ videos, onVideoSelect }) => {
 
     const renderedList = videos.map((video) => {
-        return <VideoItem onVideoSelect={onVideoSelect} video={video}/>;
+        return <VideoItem 
+                    key={video.id.videoId} 
+                    onVideoSelect={onVideoSelect} 
+                    video={video}
+                />;
     });
 
     // props.videos is the array of videos that we recive that we want to render to the screen
